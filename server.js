@@ -36,7 +36,6 @@ app.get("/api/notes", function(req, res) {
   });
 
 app.post("/api/notes", function(req, res) {
-    
     var note = req.body;
     var id = uuidv4();
     note.id = id;
@@ -47,6 +46,31 @@ app.post("/api/notes", function(req, res) {
         console.log(err);
     });
   });
+
+app.delete("/api/notes/:id", function(req, res) {
+    var idToRemove = req.params.id;
+    notes = notes.filter((note) => note.id !== idToRemove);
+    
+    console.log("retainedNotes: " + JSON.stringify(notes));
+    writeFileAsync("db/db.json", JSON.stringify(notes)).then(function(){
+        res.send("Deleted Note");
+    }).catch(function(err){
+        console.log(err);
+    });
+});
+
+// app.delete("/api/notes/:id", function(req, res) {
+//     var idToRemove = req.params.id;
+//     const retainedNotes = notes.filter((note) => note.id !== idToRemove);
+    
+//     console.log("retainedNotes: " + JSON.stringify(retainedNotes));
+//     writeFileAsync("db/db.json", JSON.stringify(retainedNotes)).then(function(){
+//         res.send("Deleted Note");
+//     }).catch(function(err){
+//         console.log(err);
+//     });
+// });
+
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/assets/index.html"));

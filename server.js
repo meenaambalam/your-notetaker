@@ -52,7 +52,7 @@ app.delete("/api/notes/:id", function(req, res) {
     notes = notes.filter((note) => note.id !== idToRemove);
     
     console.log("retainedNotes: " + JSON.stringify(notes));
-    writeFileAsync("db/db.json", JSON.stringify(notes)).then(function(){
+    writeFileAsync("db/db.json", JSON.stringify(notes, null, "\t")).then(function(){
         res.send("Deleted Note");
     }).catch(function(err){
         console.log(err);

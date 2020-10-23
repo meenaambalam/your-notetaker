@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^2.0.6",
-    "uuid": "^8.3.1"
+    "line-reader": "^0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

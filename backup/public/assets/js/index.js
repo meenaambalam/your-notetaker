@@ -1,8 +1,11 @@
+//HTML JQuery selector
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
+
+console.log("testing");
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
@@ -12,7 +15,7 @@ const getNotes = () => {
   return $.ajax({
     url: "/api/notes",
     method: "GET",
-  });
+  })
 };
 
 // A function for saving a note to the db
@@ -103,6 +106,8 @@ const handleRenderSaveBtn = function () {
 
 // Render's the list of note titles
 const renderNoteList = (notes) => {
+
+  console.log("Meena notes: " + notes );
   $noteList.empty();
 
   const noteListItems = [];

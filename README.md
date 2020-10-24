@@ -19,14 +19,16 @@
         
 ## Description
 ```
-This Application can be used to write, save, and delete notes. The data is saved to the a file in JSON format, so that it can be retrieved for viewing. This application gives opportunity for the user to organize their thoughts and keep track of their tasks that they need to complete.
+This Application can be used to write, save, and delete notes. The data is saved to the a file in JSON format, so that it can be retrieved for viewing.
+This application gives opportunity for the user to organize their thoughts and keep track of their tasks that they need to complete.
 ```
         
 <div id="install"/>
         
 ## Installation Instruction
 ```
-This application is dependent on Node JS installation. Within NodeJS, it requires installation of "express" package for server side api request handling. It requires "util" package to promisify writeFile. It requires "uuid" package to generate a random id to attach to each notes, to be able to retrieve and delete the notes as necessary.
+This application is dependent on Node JS installation. Within NodeJS, it requires installation of "express" package for server side api request handling.
+It requires "util" package to promisify writeFile. It requires "uuid" package to generate a random id to attach to each notes, to be able to retrieve and delete the notes as necessary.
 ```
         
 <div id="usage"/>

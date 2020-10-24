@@ -13,7 +13,7 @@
 
 6. [Screenshots](#images)
 
-7. [Questions](#questions)
+7. [URL](#url)
         
 <div id="description"/>
         
@@ -70,18 +70,22 @@ View of entry of the saved Note for 10/24/20:
 
 ![Screenshot#2](./Assets/Screenshot_newNote_saved.jpg)
 
+View of retrieved notes saved before:
+---------------------------------------------
+
+![Screenshot#3](./Assets/Screenshot_retrieve_savedNote.jpg)
+
 View of notes saved in file in JSON format:
 ---------------------------------------------
 
-![Screenshot#3](./Assets/Screenshot_dbJSON_file_with_SavedNotes.jpg)
+![Screenshot#4](./Assets/Screenshot_dbJSON_file_with_SavedNotes.jpg)
         
         
-<div id="questions"/>
+<div id="url"/>
         
-## Questions
+## URL
+
 GitHub Repository: [[https://github.com/meenaambalam/your-notetaker]](https://github.com/meenaambalam/your-notetaker)
 
 Application URL : [[https://your-notetaker.herokuapp.com/]](https://your-notetaker.herokuapp.com/)
 
-
-Please contact meenaambalam at [meena.a.ambalam@gmail.com](mailto:meena.a.ambalam@gmail.com?subject=Github) in case of any questions with the application or instruction.

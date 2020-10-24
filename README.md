@@ -63,7 +63,7 @@ Unlicense
 
 View of entry of a new Note for 10/24/20:
 ----------------------------------------
-![Screenshot#1](./Assets/Screenshot_newNote.PNG.jpg)
+![Screenshot#1](./Assets/Screenshot_newNote.jpg)
 
 View of entry of the saved Note for 10/24/20:
 ----------------------------------------------

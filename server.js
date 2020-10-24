@@ -1,18 +1,18 @@
 // Dependencies
 // =============================================================
-var express = require("express");
-var fs = require("fs");
-var path = require("path");
-var notes = require("./db/db.json");
-var util = require("util");
-var { v4 : uuidv4 } = require('uuid');
+let express = require("express");
+let fs = require("fs");
+let path = require("path");
+let notes = require("./db/db.json"); 
+let util = require("util"); //util to promisify the writeFile function
+let { v4 : uuidv4 } = require('uuid');  //package that generates random id - version update 3.1.0
 
-var writeFileAsync = util.promisify(fs.writeFile);
+let writeFileAsync = util.promisify(fs.writeFile); //promisification of writeFile method
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 3001;
+let app = express();
+let PORT = process.env.PORT || 3001;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -22,33 +22,32 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the AJAX Page
+// get /notes route - route that sends the user to the "notes" page
 app.get("/notes", function(req, res) {
   res.sendFile(path.join(__dirname, "/public/assets/notes.html"));
 });
 
+//get api route  - gets all the notes from db.json file and sends that response as json to the requestor
 app.get("/api/notes", function(req, res) {
-    //let notes = fs.readFileSync('./db/db.json');
-    //if (notes){
-        console.log("notes: " + notes);
-        res.json(notes);
-    //}
+    res.json(notes);
   });
 
+//post api route - posts the new Note sent from notes.html, to the notes array and writes to the db.json file
 app.post("/api/notes", function(req, res) {
-    var note = req.body;
-    var id = uuidv4();
+    let note = req.body;
+    let id = uuidv4();  //generates unique id
     note.id = id;
-    notes.push(note);
-    writeFileAsync("db/db.json", JSON.stringify(notes)).then(function(){
+    notes.push(note);   //push the new Note to the notes array of JSON object
+    writeFileAsync("db/db.json", JSON.stringify(notes, null, 2)).then(function(){
         res.json(note);
     }).catch(function(err){
         console.log(err);
     });
   });
 
+//delete api route to delete specific note by matching the id of the note chosen for deletion
 app.delete("/api/notes/:id", function(req, res) {
-    var idToRemove = req.params.id;
+    let idToRemove = req.params.id;
     notes = notes.filter((note) => note.id !== idToRemove);
     
     console.log("retainedNotes: " + JSON.stringify(notes));
@@ -59,19 +58,7 @@ app.delete("/api/notes/:id", function(req, res) {
     });
 });
 
-// app.delete("/api/notes/:id", function(req, res) {
-//     var idToRemove = req.params.id;
-//     const retainedNotes = notes.filter((note) => note.id !== idToRemove);
-    
-//     console.log("retainedNotes: " + JSON.stringify(retainedNotes));
-//     writeFileAsync("db/db.json", JSON.stringify(retainedNotes)).then(function(){
-//         res.send("Deleted Note");
-//     }).catch(function(err){
-//         console.log(err);
-//     });
-// });
-
-
+//get api route - catch all route, that will render the home page
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/assets/index.html"));
 });

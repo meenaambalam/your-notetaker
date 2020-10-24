@@ -1,17 +1,22 @@
 [
-	{
-		"title": "Adding more notes",
-		"text": "I love God! I love Lord Krishna and Lord Siva!\nGod, keep me same as now, irrespective of what situation I may be put under.\nThat is my honest and humblest prayer for you.\nI don't want to be sinful even when I fall into some mental health issue that is beyond my control.",
-		"id": "e9a0b354-631f-4708-a6e8-2ad0d25f8488"
-	},
-	{
-		"title": "14th note",
-		"text": "Sastram teach us and protects us from artha kama. The dharma is taught to remove the artha kama desires. Earning and enjoying is called \"Kaithavam\", dangerous for soceity.",
-		"id": "35f52771-fae6-4c83-9bd8-e96594544d08"
-	},
-	{
-		"title": "15th Note",
-		"text": "Kazhagam is making Kalagam. ",
-		"id": "e0e2d3e8-1e59-44fe-99f6-950ebb74ffd6"
-	}
+  {
+    "title": "10/23/2020 Note",
+    "text": "Continuing to learn MYSQL and connection to SQL from Node. \nToday, we will be working on a group project which functions like eBay.",
+    "id": "3b151572-0d8c-4e75-b254-97c41ec9fffc"
+  },
+  {
+    "title": "10/16/2020",
+    "text": "Drive to Wisconsin Cabin",
+    "id": "6efa7391-0345-4ac5-be34-cce22b7d61f3"
+  },
+  {
+    "title": "10/24/2020",
+    "text": "Review node JS and ES6 activities",
+    "id": "44016e8d-6a1e-4872-b23b-ca756e78aa3f"
+  },
+  {
+    "title": "10/18/20",
+    "text": "Return drive from St.Germain Wisconsin back to Minnesota",
+    "id": "99dd7c29-b9a9-4c0a-9489-7576e2964cc9"
+  }
 ]
